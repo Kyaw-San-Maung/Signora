@@ -1,3 +1,5 @@
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import {
   Badge,
@@ -7,13 +9,14 @@ import {
   Nav,
   Navbar,
 } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function () {
   return (
     <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
       <Container>
         <Navbar.Brand>
-          <a href="/">Signora Austetic</a>
+          <Link to="/">Signora Austetic</Link>
         </Navbar.Brand>
         <Navbar.Text className="search">
           <FormControl
@@ -25,7 +28,8 @@ export default function () {
         <Nav>
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
-              <Badge>{10}</Badge>
+              <FontAwesomeIcon icon={faCartShopping} size="xl" />
+              <Badge bg="green">{10}</Badge>
             </Dropdown.Toggle>
 
             <Dropdown.Menu style={{ minWidth: 370 }}>
