@@ -1,5 +1,6 @@
 import React from 'react'
 import { CartState } from '../context/Context'
+import SingleProduct from './SingleProduct';
 
 export default function Home() {
 
@@ -12,7 +13,7 @@ export default function Home() {
       {/* <Filter /> */}
       <div className='productContainer'>
         {product.map((products) => {
-          return <span key={products.id}>{ products.name}</span>
+          return <SingleProduct products={ products} key={products.id} />
         })}
       </div>
     </div>
