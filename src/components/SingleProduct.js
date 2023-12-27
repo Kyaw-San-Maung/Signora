@@ -21,7 +21,7 @@ function SingleProduct({ products }) {
           <Button variant="danger">Remove From cart</Button>
           <Button disabled={!products.inStock}>
                       {!products.inStock ? "Out of Stock" : "Add to Cart"}
-                      {console.log(!products.inStock)}
+                      
           </Button>
         </Card.Body>
       </Card>
