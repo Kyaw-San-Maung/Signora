@@ -1,8 +1,14 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import Rating from "./Rating";
+import { CartState } from "../context/Context";
 
 function SingleProduct({ products }) {
+  const {
+    state: { cart },
+    dispatch,
+  } = CartState();
+
   return (
     <div className="products">
       <Card>
@@ -18,11 +24,31 @@ function SingleProduct({ products }) {
             )}
             <Rating rating={products.rating} />
           </Card.Subtitle>
-          <Button variant="danger">Remove From cart</Button>
-          <Button disabled={!products.inStock}>
-                      {!products.inStock ? "Out of Stock" : "Add to Cart"}
-                      
-          </Button>
+          {cart.some((p) => p.id === products.id) ? (
+            <Button
+              onClick={() => {
+                dispatch({
+                  type: "REMOVE_FROM_CART",
+                  payload: products,
+                });
+              }}
+              variant="danger"
+            >
+              Remove From cart
+            </Button>
+          ) : (
+            <Button
+              onClick={() => {
+                dispatch({
+                  type: "ADD_TO_CART",
+                  payload: products,
+                });
+              }}
+              disabled={!products.inStock}
+            >
+              {!products.inStock ? "Out of Stock" : "Add to Cart"}
+            </Button>
+          )}
         </Card.Body>
       </Card>
     </div>
