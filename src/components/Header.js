@@ -24,7 +24,7 @@ export default function () {
     <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
       <Container>
         <Navbar.Brand>
-          <Link to="/">Signora Austetic</Link>
+          <Link to="/">Signora</Link>
         </Navbar.Brand>
         <Navbar.Text className="search">
           <FormControl
