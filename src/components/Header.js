@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import {
   Badge,
+  Button,
   Container,
   Dropdown,
   FormControl,
@@ -39,11 +40,11 @@ export default function () {
               <Badge bg="green">{cart.length}</Badge>
             </Dropdown.Toggle>
 
-            <Dropdown.Menu style={{ minWidth: 370 }}>
+            <Dropdown.Menu style={{ minWidth: 360 }}>
               {cart.length > 0 ? (
                 <>
                   {cart.map((products) => (
-                    <span className="cartitem" key={products.id}>
+                    <span className="cartItem" key={products.id}>
                       <img
                         src={products.image}
                         className="cartItemImg"
@@ -65,6 +66,11 @@ export default function () {
                       />
                     </span>
                   ))}
+                  <Link to="/cart">
+                    <Button style={{ width: "95%", margin: " 0 10px" }}>
+                      Go To Cart
+                    </Button>
+                  </Link>
                 </>
               ) : (
                 <span style={{ padding: 10 }}>Cart is Empty</span>
