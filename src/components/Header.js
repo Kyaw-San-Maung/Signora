@@ -10,8 +10,15 @@ import {
   Navbar,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { CartState } from "../context/Context";
+import { AiFillDelete } from "react-icons/ai";
 
 export default function () {
+  const {
+    state: { cart },
+    dispatch,
+  } = CartState();
+
   return (
     <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
       <Container>
@@ -29,11 +36,39 @@ export default function () {
           <Dropdown>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               <FontAwesomeIcon icon={faCartShopping} size="xl" />
-              <Badge bg="green">{10}</Badge>
+              <Badge bg="green">{cart.length}</Badge>
             </Dropdown.Toggle>
 
             <Dropdown.Menu style={{ minWidth: 370 }}>
-              <span style={{ padding: 10 }}>Cart is Empty</span>
+              {cart.length > 0 ? (
+                <>
+                  {cart.map((products) => (
+                    <span className="cartitem" key={products.id}>
+                      <img
+                        src={products.image}
+                        className="cartItemImg"
+                        alt={products.name}
+                      />
+                      <div className="cartItemDetail">
+                        <span>{products.name}</span>
+                        <span>$ {products.price}</span>
+                      </div>
+                      <AiFillDelete
+                        fontSize="20px"
+                        style={{ cursor: "pointer" }}
+                        onClick={() =>
+                          dispatch({
+                            type: "REMOVE_FROM_CART",
+                            payload: products,
+                          })
+                        }
+                      />
+                    </span>
+                  ))}
+                </>
+              ) : (
+                <span style={{ padding: 10 }}>Cart is Empty</span>
+              )}
             </Dropdown.Menu>
           </Dropdown>
         </Nav>
