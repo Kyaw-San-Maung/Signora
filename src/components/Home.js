@@ -2,6 +2,7 @@ import React from 'react'
 import { CartState } from '../context/Context'
 import SingleProduct from './SingleProduct';
 import './style.css'
+import Filters from './Filters';
 
 export default function Home() {
 
@@ -11,7 +12,7 @@ export default function Home() {
 
   return (
     <div className='home'>
-      {/* <Filter /> */}
+      <Filters />
       <div className='productContainer'>
         {product.map((products) => {
           return <SingleProduct products={ products} key={products.id} />

@@ -9,3 +9,21 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+.filters{
+    background-color: #343a40;
+    display: flex;
+    color: white;
+    padding: 20px;
+    flex-direction: column;
+    width: 20%;
+    margin: 10px;
+    height: 80vh;
+}
+
+.filters > span{
+    padding-bottom: 20px;
+}
+
+title{
+    font-size: 30px;
+}
