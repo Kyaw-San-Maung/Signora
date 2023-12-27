@@ -27,3 +27,7 @@
 title{
     font-size: 30px;
 }
+
+.noFilter{
+    filter: none;
+}
