@@ -4,7 +4,7 @@ import Rating from "./Rating";
 
 export default function Filters() {
 
-    const [rate, setRate] = useState(4);
+    const [rate, setRate] = useState(2);
 
   return (
     <div className="filters">
