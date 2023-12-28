@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { Button, FormCheck } from "react-bootstrap";
 import Rating from "./Rating";
+import { CartState } from "../context/Context";
 
 export default function Filters() {
 
-    const [rate, setRate] = useState(2);
+  const [rate, setRate] = useState(2);
+  
+  const { productState, productDispatch } = CartState();
+
+  console.log(productState);
 
   return (
     <div className="filters">
