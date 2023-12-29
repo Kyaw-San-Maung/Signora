@@ -18,6 +18,7 @@ export default function () {
   const {
     state: { cart },
     dispatch,
+    productDispatch
   } = CartState();
 
   return (
@@ -31,6 +32,12 @@ export default function () {
             style={{ width: 500 }}
             placeholder="search product.."
             className="m-auto"
+            onChange={(e) => {
+              productDispatch({
+                type: "FILTER_BY_SEARCH",
+                payload: e.target.value,
+              })
+            }}
           />
         </Navbar.Text>
         <Nav>
