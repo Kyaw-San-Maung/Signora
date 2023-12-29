@@ -4,11 +4,12 @@ import { CartState } from "../context/Context";
 
 export default function Filters() {
   const {
-    productState: { byStock, byFastDelivery, sort, byRating },
+    productState: {byStock, byFastDelivery, sort, byRating},
     productDispatch,
   } = CartState();
 
   console.log(byStock, byFastDelivery, sort, byRating);
+
   return (
     <div className="filters">
       <span className="title">Filter Products</span>
@@ -19,13 +20,13 @@ export default function Filters() {
           name="group1"
           type="radio"
           id={`inline-1`}
-          onChange={() =>
-            productDispatch({
-              type: "SORT_BY_PRICE",
-              payload: "lowToHigh",
-            })
-          }
-          checked={sort === "lowToHigh" ? true : false}
+          // onChange={() =>
+          //   productDispatch({
+          //     type: "SORT_BY_PRICE",
+          //     payload: "lowToHigh",
+          //   })
+          // }
+          // checked={sort === "lowToHigh" ? true : false}
         />
       </span>
       <span>
@@ -35,13 +36,13 @@ export default function Filters() {
           name="group1"
           type="radio"
           id={`inline-2`}
-          onChange={() =>
-            productDispatch({
-              type: "SORT_BY_PRICE",
-              payload: "highToLow",
-            })
-          }
-          checked={sort === "highToLow" ? true : false}
+          // onChange={() =>
+          //   productDispatch({
+          //     type: "SORT_BY_PRICE",
+          //     payload: "highToLow",
+          //   })
+          // }
+          // checked={sort === "highToLow" ? true : false}
         />
       </span>
       <span>
@@ -51,12 +52,12 @@ export default function Filters() {
           name="group1"
           type="radio"
           id={`inline-3`}
-          onChange={() =>
-            productDispatch({
-              type: "FILTER_BY_STOCK",
-            })
-          }
-          checked={byStock}
+          // onChange={() =>
+          //   productDispatch({
+          //     type: "FILTER_BY_STOCK",
+          //   })
+          // }
+          // checked={byStock}
         />
       </span>
       <span>
@@ -66,12 +67,12 @@ export default function Filters() {
           name="group1"
           type="checkbox"
           id={`inline-4`}
-          onChange={() =>
-            productDispatch({
-              type: "FILTER_BY_DELIVERY",
-            })
-          }
-          checked={byFastDelivery}
+          // onChange={() =>
+          //   productDispatch({
+          //     type: "FILTER_BY_DELIVERY",
+          //   })
+          // }
+          // checked={byFastDelivery}
         />
       </span>
       <span>

@@ -20,9 +20,15 @@ export default function Cart() {
 
   const [total, setTotal] = useState();
 
+  // useEffect(() => {
+  //   setTotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0));
+  // }, [cart]);
+
   useEffect(() => {
-    setTotal(cart.reduce((acc, curr) => acc + Number(curr.price), 0));
-  }, [cart]);
+    setTotal(
+      cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+    );
+  });
 
   return (
     <div className="home">
@@ -63,6 +69,7 @@ export default function Cart() {
                     }
                   >
                     {[...Array(products.inStock).keys()].map((x) => (
+                      // <option key={x + 1}> {x + 1}</option>
                       <option key={x + 1}> {x + 1}</option>
                     ))}
                   </Form.Control>
