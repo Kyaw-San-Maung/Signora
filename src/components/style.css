@@ -63,7 +63,7 @@ title{
     width: 30%;
 }
 
-@media (max-width: 771px) {
+/* @media (max-width: 771px) {
     .filters{
         width: 40%;
         padding: 10px;
@@ -90,4 +90,4 @@ title{
     .products {
         width: 100%;
     }
-}
+} */

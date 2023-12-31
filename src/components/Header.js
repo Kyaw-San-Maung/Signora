@@ -47,7 +47,7 @@ export default function () {
               <Badge bg="green">{cart.length}</Badge>
             </Dropdown.Toggle>
 
-            <Dropdown.Menu style={{ minWidth: 360 }}>
+            <Dropdown.Menu style={{ minWidth: 250 }}>
               {cart.length > 0 ? (
                 <>
                   {cart.map((products) => (
